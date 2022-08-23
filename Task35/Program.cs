@@ -6,7 +6,7 @@
 // [1, 2, 3, 6, 2] -> 0
 // [10, 11, 12, 13, 14] -> 5
 
-int[] arr1 = CreateRndArray(123, 0, 999);
+int[] arr1 = CreateRndArray(123, 0, 150);
 PrintArray(arr1);
 Console.WriteLine("->" + CalcArr(arr1));
 
