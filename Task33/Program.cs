@@ -15,7 +15,7 @@ int[] CreateRndArray(int size, int min, int max)
     return array;
 }
 
-void PrintArray (int[] array)
+void PrintArray(int[] array)
 {
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
@@ -26,21 +26,23 @@ void PrintArray (int[] array)
     Console.WriteLine("]");
 }
 
-bool FindElemInArray(int[] array, int elemF) 
+bool FindElemInArray(int[] array, int elemF)
 {
     bool ret = false;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] == elemF)
-        ret = true;
-        break;
+        {
+            ret = true;
+            break;
+        }
     }
     return ret;
 }
 
 Console.WriteLine("Введите число: ");
 int findI = Convert.ToInt32(Console.ReadLine());
-int[] arr = CreateRndArray (12, -9, 9);
+int[] arr = CreateRndArray(12, -9, 9);
 PrintArray(arr);
 bool search = FindElemInArray(arr, findI);
 
