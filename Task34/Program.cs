@@ -17,7 +17,7 @@ int[] CreateRndArray(int size, int min, int max)
     return arr1;
 }
 
-void PrintArray (int[] array)
+void PrintArray(int[] array)
 {
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
@@ -30,7 +30,7 @@ void PrintArray (int[] array)
 
 int CountEvenElement(int[] array)
 {
-    int evenCount = 0; // задали счетчик
+    int evenCount = 0;
 
     for (int i = 0; i < array.Length; i++)
     {
@@ -39,4 +39,4 @@ int CountEvenElement(int[] array)
     return evenCount;
 }
 
-Console.WriteLine($"{CountEvenElement(array)}");
+Console.WriteLine($"Количество чётных чисел в массиве -> {CountEvenElement(array)}");
