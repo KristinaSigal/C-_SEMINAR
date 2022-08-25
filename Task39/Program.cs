@@ -1,46 +1,70 @@
-﻿// Задача 38: 
-// 1. Задайте массив вещественных чисел. 
-// 2. Найдите разницу между максимальным и минимальным элементами массива.
-// [3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
+﻿// Задача 39: Напишите программу, которая перевернёт
+// одномерный массив (последний элемент будет на первом
+// месте, а первый - на последнем и т.д.)
+// [1 2 3 4 5] -> [5 4 3 2 1]
+// [6 7 3 6] -> [6 3 7 6]
 
-double[] array = CreateRndArray(8, -99, 100);
-PrintArray(array);
-
-double[] CreateRndArray(int size, int min, int max)
+int[] CreateRndArray(int size, int min, int max)
 {
-    double[] arr1 = new double[size];
+    int[] array = new int[size];
     Random rnd = new Random();
 
-    for (int i = 0; i < arr1.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        arr1[i] = (double)rnd.Next(min, max + 1)  + Math.Round(rnd.NextDouble(), 1);
+        array[i] = rnd.Next(min, max + 1);
     }
-    return arr1;
+    return array;
 }
 
-void PrintArray (double[] array)
+void PrintArray(int[] array)
 {
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
     {
-        if (i < array.Length - 1) Console.Write($"{array[i]}; ");
+        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
     }
     Console.Write(array[array.Length - 1]);
     Console.WriteLine("]");
 }
 
-double MinMaxDif(double[] array)
-{
-    double min = double.MaxValue; //максимальное значение которое можно положить в тип
-    double max = double.MinValue; //минимальное значение которое можно положить в тип
-   
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] < min) min = array[i];
-        if (array[i] > max) max = array[i];
-    }
+//  0 1 2 3 4    obj=2 (элемент по индексу 1)
+// [1 2 3 4 5]
+// [5 2 3 4 1]
 
-    return max - min;;
+void ReverseArray(int[] array)
+{
+    int size = array.Length;
+    int index1 = 0;
+    int index2 = size - 1;
+
+    while (index1 < index2)
+    {
+        int obj = array[index1];
+        array[index1] = array[index2];
+        array[index2] = obj;
+
+        index1++;
+        index2--;
+    }
 }
 
-Console.WriteLine($"Разница между максимальным и минимальным элементами массива -> {MinMaxDif(array)}");
+//  0 1 2 3 4    temp=2
+// [1 2 3 4 5]
+// [5 2 3 4 1]
+
+void ReverseArray1(int[] array)
+{
+    int size = array.Length;
+    for (int i = 0; i < size / 2; i++)
+    {
+        int temp = array[i];
+        array[i] = array[size - 1 - i];
+        array[size - 1 - i] = temp;
+    }
+}
+
+int[] arr = CreateRndArray(5, 1, 25);
+PrintArray(arr);
+//ReverseArray(arr);
+ReverseArray1(arr);
+PrintArray(arr);
