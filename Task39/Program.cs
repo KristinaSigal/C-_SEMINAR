@@ -31,6 +31,7 @@ void PrintArray(int[] array)
 // [1 2 3 4 5]
 // [5 2 3 4 1]
 
+//Array.Reverse(arr); // встроенная функция = ReverseArray(int[] array)
 void ReverseArray(int[] array)
 {
     int size = array.Length;
@@ -66,5 +67,6 @@ void ReverseArray1(int[] array)
 int[] arr = CreateRndArray(5, 1, 25);
 PrintArray(arr);
 //ReverseArray(arr);
+//Array.Reverse(arr);
 ReverseArray1(arr);
 PrintArray(arr);
