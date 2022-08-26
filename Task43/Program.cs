@@ -16,4 +16,4 @@ double k2 = Convert.ToDouble(Console.ReadLine());
 
 double x = (b2-b1)/(k1-k2);
 double y = k1*x + b1;
-Console.WriteLine($"Точка пересечения двух прямых ({x.ToString(2)};{y.ToString(2)})");
+Console.WriteLine($"Точка пересечения двух прямых ({x.ToString("0.00")};{y.ToString("0.00")})");
