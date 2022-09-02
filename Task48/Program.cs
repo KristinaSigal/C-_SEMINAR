@@ -35,5 +35,5 @@ void PrinMatrix(int[,] matrix)
     }
 }
 
-int[,] matr = CreateMatrixRndInt(3, 4);
+int[,] matr = CreateMatrixRndInt(3, 4, 0, 9);
 PrinMatrix(matr);
