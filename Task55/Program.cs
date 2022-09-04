@@ -48,8 +48,20 @@ int[,] TurnArray(int[,] matrix)
     return turnMatr;
 }
 
-int[,] matr= CreateMatrixRndInt(4,4,10,99);
+bool SqMatr(int[,] matrix)
+{
+    return matrix.GetLength(0) == matrix.GetLength(1);
+}
+
+int[,] matr= CreateMatrixRndInt(3,4,10,99);
 PrinMatrix(matr);
+if (SqMatr(matr))
+{
 Console.WriteLine();
 int[,] turnMatr = TurnArray(matr);
 PrinMatrix(turnMatr);
+}
+else
+{
+    System.Console.WriteLine("Невозможно заменить");
+}
