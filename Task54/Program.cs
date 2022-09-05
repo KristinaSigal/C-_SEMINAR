@@ -48,11 +48,11 @@ void SortMatrix(int[,] matrix)
             int max = j;
             for (int k = j + 1; k < matrix.GetLength(1); k++)
             {
-                if (matrix[i,k] > matrix[i,max]) max = k;
+                if (matrix[i, k] > matrix[i, max]) max = k;
             }
 
-            int temp = matrix[i,max];
-            matrix[i, max] =  matrix[i, j];
+            int temp = matrix[i, max];
+            matrix[i, max] = matrix[i, j];
             matrix[i, j] = temp;
         }
     }

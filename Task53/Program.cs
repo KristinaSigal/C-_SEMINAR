@@ -10,7 +10,7 @@ int[,] CreateMatrixRndInt(int row, int col, int min, int max) // row - ряды,
 
     for (int i = 0; i < matrix.GetLength(0); i++) // проход по строкам, можно указать i < row (вместо i < matrix.GetLength(0)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++) // проход по строкам, можно указать i < col (вместо i < matrix.GetLength(0)
+        for (int j = 0; j < matrix.GetLength(1); j++) // проход по колонкам, можно указать i < col (вместо i < matrix.GetLength(0)
         {
             matrix[i, j] = i + j;
         }

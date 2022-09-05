@@ -52,14 +52,14 @@ void SumRowMatrix(int[,] matrix)
 
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            sumRow+= matrix[i,j];
+            sumRow += matrix[i, j];
         }
-        if (sumRow<sumMinRow) 
+        if (sumRow < sumMinRow)
         {
             sumMinRow = sumRow;
-            rowNumber = i+1;
+            rowNumber = i + 1;
         }
-    } 
+    }
     Console.WriteLine($"Номер строки с наименьшей суммой элементов:{rowNumber}");
 }
 

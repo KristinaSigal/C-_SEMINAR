@@ -59,23 +59,23 @@ void PrintArray(int[] array)
     Console.WriteLine("]");
 }
 
-void CountSimularElem(int[]array)
+void CountSimularElem(int[] array)
 {
     int count = 1;
     int number = array[0];
     for (int i = 1; i < array.Length; i++)
     {
-       if(array[i] == number) count++;
-       else
-       {
-        Console.WriteLine($"{number} -> {count}");
-        number = array[i];
-        count = 1;
-       }
-       if (i == array.Length-1)
-       {
-        Console.WriteLine($"{number} -> {count}");
-       }
+        if (array[i] == number) count++;
+        else
+        {
+            Console.WriteLine($"{number} -> {count}");
+            number = array[i];
+            count = 1;
+        }
+        if (i == array.Length - 1)
+        {
+            Console.WriteLine($"{number} -> {count}");
+        }
     }
 }
 
