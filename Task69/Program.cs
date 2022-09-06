@@ -8,15 +8,21 @@ int numberA = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе положительное число B: ");
 int numberB = Convert.ToInt32(Console.ReadLine());
 
+// int Rate(int a, int b)
+// {
+//     int res = a;
+//     if (b == 0) return 1;
+//     else
+//     {
+//         res *= Rate(a, b - 1);
+//     }
+//     return res;
+// }
+
 int Rate(int a, int b)
 {
-    int res = a;
     if (b == 0) return 1;
-    else
-    {
-        res *= Rate(a, b - 1);
-    }
-    return res;
+    return a * Rate(a, b-1);
 }
 
 int resulst = Rate(numberA, numberB);
